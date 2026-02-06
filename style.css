@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #ffe4f1, #fff0f7);
+    overflow-x: hidden;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #ffe4f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loader-card {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+}
+
+/* Lock Screen */
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 228, 241, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+}
+
+.lock-card {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.lock-card h1 {
+    font-family: 'Pacifico';
+    color: #e11d48;
+}
+
+#unlockBtn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #e11d48;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Content */
+#content {
+    display: none;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    margin: 20px;
+    padding: 40px 22px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Pacifico';
+    font-size: 2.4rem;
+    color: #e11d48;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.badge {
+    margin: 10px auto;
+    background: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    width: fit-content;
+}
+
+.btn {
+    margin-top: 25px;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 40px;
+    background: #e11d48;
+    color: white;
+    font-size: 1rem;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 📸 Clean Swipe Memory Layout (for current HTML) */
+
+.memory-section {
+    padding-bottom: 40px;
+}
+
+.memory-sub {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-top: 6px;
+}
+
+/* Horizontal swipe gallery */
+.memory-gallery {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.memory-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card */
+.memory-card {
+    min-width: 230px;
+    background: white;
+    border-radius: 22px;
+    padding: 12px;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+/* Image */
+.memory-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Caption */
+.memory-card span {
+    display: block;
+    margin-top: 12px;
+    padding: 10px;
+    background: #ffe4f1;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    color: #444;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* 🔍 Image zoom on hover */
+
+.memory-card {
+    overflow: hidden;
+    /* IMPORTANT */
+}
+
+.memory-card img {
+    transition: transform 0.35s ease;
+}
+
+.memory-card:hover img {
+    transform: scale(1.06);
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 30px;
+}
+
+/* Fullscreen viewer */
+#imageViewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 99999;
+}
+
+#viewerTrack {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+#viewerTrack img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    scroll-snap-align: center;
+}
+
+#closeViewer {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}

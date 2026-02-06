@@ -24,10 +24,13 @@ document.addEventListener("click", startMusicOnce, { once: true });
 document.addEventListener("touchstart", startMusicOnce, { once: true });
 
 // Unlock
+// Unlock (mobile-safe music start)
 unlockBtn.onclick = () => {
     lockScreen.style.display = "none";
     content.style.display = "block";
+    startMusicOnce(); // 🔊 guaranteed user gesture
 };
+
 
 // Scroll reveal
 const hiddenSections = document.querySelectorAll(".hidden");
